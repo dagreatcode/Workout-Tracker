@@ -27,4 +27,4 @@ router.post("/api/exercise", (req, res) => {
   });
 });
 
-modules.exports = router;
+module.exports = router;

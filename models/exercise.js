@@ -154,3 +154,5 @@ toast.addEventListener("animationend", handleToastAnimationEnd);
 document
   .querySelectorAll("input")
   .forEach(element => element.addEventListener("input", validateInputs));
+
+  modules.exports = Exercise;

@@ -4,7 +4,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-const db = require("./models");
+// const db = require("./models");
 const exerciseController = require("./controllers/exerciseController");
 
 app.use(express.urlencoded({ extended: true }));

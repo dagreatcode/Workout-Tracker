@@ -33,6 +33,4 @@ mongoose.connect(
     });
   });
 
-  
-
   app.listen(PORT, () => console.log("connected"));

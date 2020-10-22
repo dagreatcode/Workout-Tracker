@@ -39,4 +39,10 @@ mongoose.connect(
       });
   });
 
+  app.post("/api/workout", (req, res) => {
+    db.Workout-Tracker.create(req.body).then((newWorkouts) => {
+        res.json(newWorkouts);
+    });
+  });
+
   app.listen(PORT, () => console.log("connected"));

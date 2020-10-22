@@ -33,4 +33,10 @@ mongoose.connect(
     });
   });
 
+  app.get("/api/ingredients", (req, res) => {
+      db.Workout-Tracker.find({}).then(foundWorkouts) => {
+          res.json(foundWorkouts);
+      }
+  })
+
   app.listen(PORT, () => console.log("connected"));

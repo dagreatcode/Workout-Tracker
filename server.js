@@ -33,28 +33,28 @@ mongoose.connect(
     });
   });
 
-  app.get("/api/workout", (req, res) => {
-      db.Workout-Tracker.find({}).then((foundWorkouts) => {
-          res.json(foundWorkouts);
+  app.get("/api/exercise", (req, res) => {
+      db.Exercise.find({}).then((foundExercise) => {
+          res.json(foundExercise);
       }).catch((err) =>{
           console.log(err);
           res.json({
               error: true,
               data: null,
-              message: "Failed to retrieve workouts.",
+              message: "Failed to retrieve Exercise.",
           });
       });
   });
 
-  app.post("/api/workout", (req, res) => {
-    db.Workout-Tracker.create(req.body).then((newWorkouts) => {
-        res.json(newWorkouts);
+  app.post("/api/exercise", (req, res) => {
+    db.Exercise.create(req.body).then((newExercise) => {
+        res.json(newExercise);
     }).catch((err) =>{
         console.log(err);
         res.json({
             error: true,
             data: null,
-            message: "Failed to make new workouts.",
+            message: "Failed to make new Exercise.",
         });
     });
   });

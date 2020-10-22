@@ -36,12 +36,26 @@ mongoose.connect(
   app.get("/api/workout", (req, res) => {
       db.Workout-Tracker.find({}).then((foundWorkouts) => {
           res.json(foundWorkouts);
+      }).catch((err) =>{
+          console.log(err);
+          res.json({
+              error: true,
+              data: null,
+              message: "Failed to retrieve workouts.",
+          });
       });
   });
 
   app.post("/api/workout", (req, res) => {
     db.Workout-Tracker.create(req.body).then((newWorkouts) => {
         res.json(newWorkouts);
+    }).catch((err) =>{
+        console.log(err);
+        res.json({
+            error: true,
+            data: null,
+            message: "Failed to make new workouts.",
+        });
     });
   });
 

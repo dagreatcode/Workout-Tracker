@@ -62,4 +62,6 @@ mongoose.connect(
 //     });
 //   });
 
+  app.use(exerciseController);
+
   app.listen(PORT, () => console.log("connected"));

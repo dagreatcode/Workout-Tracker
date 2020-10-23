@@ -1,6 +1,7 @@
 const express =  require("express");
 const router =  express.Router();
 
+
 const db = require("../models");
 
 router.get("/", function (req, res) {
@@ -16,7 +17,7 @@ router.get("/stats", function (req, res) {
 });
 
 // router.get("/api/workouts", (req, res) => {
-    router.get("/api/workouts/range", (req, res) => {
+router.get("/api/workouts/range", (req, res) => {
     db.Workout.find({}).then((foundWorkout) => {
         res.json(foundWorkout);
     }).catch((err) =>{

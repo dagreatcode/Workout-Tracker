@@ -21,14 +21,6 @@ router.get("/stats", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/stats.html"));
 });
 
-// router.get("/", (req, res) => {
-//     db.Workout.find({})
-//         .populate("workouts")
-//         .then((foundWorkout) => {
-//             res.json(foundWorkout)
-//         })
-// })
-
 router.get("/api/workouts", (req, res) => {
     db.Workout.find({}).then((foundWorkouts) => {
         res.json(foundWorkouts);

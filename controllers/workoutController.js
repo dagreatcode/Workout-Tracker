@@ -3,7 +3,9 @@ const router =  express.Router();
 
 const db = require("../models");
 
-router.get("/")
+router.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+})
 
 router.get("/api/workouts", (req, res) => {
     db.Workout.find({}).then((foundWorkout) => {
@@ -19,7 +21,33 @@ router.get("/api/workouts", (req, res) => {
 });
 
 router.post("/api/workouts", (req, res) => {
-  db.Workout.create(req.body).then((neWorkout) => {
+  db.Workout.create(req.body).then((newWorkout) => {
+      res.json(neWorkout);
+  }).catch((err) =>{
+      console.log(err);
+      res.json({
+          error: true,
+          data: null,
+          message: "Failed to make new workout.",
+      });
+  });
+});
+
+router.put("/api/workouts", (req, res) => {
+    db.Workout.find({}).then((putWorkout) => {
+        res.json(foundWorkout);
+    }).catch((err) =>{
+        console.log(err);
+        res.json({
+            error: true,
+            data: null,
+            message: "Failed to retrieve workout.",
+        });
+    });
+});
+
+router.delete("/api/workouts", (req, res) => {
+  db.Workout.create(req.body).then((deleteWorkout) => {
       res.json(neWorkout);
   }).catch((err) =>{
       console.log(err);

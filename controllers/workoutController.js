@@ -1,6 +1,6 @@
 const express =  require("express");
 const router =  express.Router();
-
+const path = require("path");
 
 const db = require("../models");
 
@@ -32,7 +32,7 @@ router.get("/api/workouts/range", (req, res) => {
 
 router.post("/api/workouts", (req, res) => {
   db.Workout.create(req.body).then((newWorkout) => {
-      res.json(neWorkout);
+      res.json(newWorkout);
   }).catch((err) =>{
       console.log(err);
       res.json({

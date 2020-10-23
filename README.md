@@ -12,3 +12,7 @@ Heroku was the part i had nothing but problems.
 <img src="./img/img0.png" alt="Big fail">
 
 Over all, this was a ok Homework.
+
+Here is a video showing it works great on local host but not heroku.
+
+https://drive.google.com/file/d/16YfFVEiWBYHLvF9wdZQHcJCm56iyxB3k/view

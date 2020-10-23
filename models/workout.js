@@ -15,15 +15,18 @@ const WorkoutSchema = new Schema ({
             },
             name: {
                 type: String,
+                required: "Name of Exercise is Required",
+                minLength: 1
             },
             duration: {
                 type: Number,
+                required: "Duration of Exercise is Required"
             },
             distance: {
                 type: Number,
             },
             weight: {
-                type: Number,
+                type: Number,                
             },
             reps: {
                 type: Number,
@@ -37,6 +40,8 @@ const WorkoutSchema = new Schema ({
             virtuals: true
         }
 });
+
+
 
 
 module.exports = Workout;

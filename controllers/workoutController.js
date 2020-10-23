@@ -15,7 +15,8 @@ router.get("/stats", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/stats.html"));
 });
 
-router.get("/api/workouts", (req, res) => {
+// router.get("/api/workouts", (req, res) => {
+    router.get("/api/workouts/range", (req, res) => {
     db.Workout.find({}).then((foundWorkout) => {
         res.json(foundWorkout);
     }).catch((err) =>{
@@ -24,7 +25,7 @@ router.get("/api/workouts", (req, res) => {
             error: true,
             data: null,
             message: "Failed to retrieve workout.",
-        });
+        }); 
     });
 });
 
@@ -56,8 +57,8 @@ router.put("/api/workouts", (req, res) => {
 
 router.delete("/api/workouts", (req, res) => {
   db.Workout.create(req.body).then((deleteWorkout) => {
-      res.json(neWorkout);
-  }).catch((err) =>{
+      res.json(deleteWorkout);
+  }).catch((err) => {
       console.log(err);
       res.json({
           error: true,

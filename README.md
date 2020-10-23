@@ -8,7 +8,7 @@ Heroku was the part i had nothing but problems.
 <img src="./img/img3.png" alt="Big fail">
 <img src="./img/img4.png" alt="Big fail">
 
-# I got so much help and still get this.
+# I got so much help and still get these errors.
 <img src="./img/img0.png" alt="Big fail">
 
 Over all, this was a ok Homework.

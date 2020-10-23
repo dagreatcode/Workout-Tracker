@@ -4,8 +4,13 @@ const path = require("path");
 
 const db = require("../models");
 
+
 router.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
+});
+
+router.get("/workouts", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/exercise.html"));
 });
 
 router.get("/exercise", function (req, res) {
@@ -15,6 +20,14 @@ router.get("/exercise", function (req, res) {
 router.get("/stats", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/stats.html"));
 });
+
+router.get("/", (req, res) => {
+    db.Workout.find({})
+        .populate("workouts")
+        .then((foundWorkout) => {
+            res.json(foundWorkout)
+        })
+})
 
 router.get("/api/workouts", (req, res) => {
     db.Workout.find({}).then((foundWorkouts) => {

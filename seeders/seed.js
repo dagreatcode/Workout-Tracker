@@ -1,12 +1,23 @@
 let mongoose = require("mongoose");
 let db = require("../models");
 
-mongoose.connect("mongodb://localhost/workout", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-});
+// process.env.MONGODB_URI || "mongodb://localhost/Workout-Tracker",
+// mongoose.connect("mongodb://localhost/workout", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   useCreateIndex: true,
+//   useFindAndModify: false,
+// });
+
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/Workout-Tracker",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  }
+);
 
 let workoutSeed = [
   {

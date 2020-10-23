@@ -6,5 +6,10 @@ const WorkoutSchema = new Schema ({
         type: Data,
   
     },
+        toJSON: {
+            virtuals: true
+        }
+});
 
-})
+
+modules.exports = Workout;

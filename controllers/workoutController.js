@@ -16,6 +16,19 @@ router.get("/stats", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/stats.html"));
 });
 
+router.get("/api/workouts", (req, res) => {
+    db.Workout.find({}).then((foundWorkouts) => {
+        res.json(foundWorkouts);
+    }).catch(err => {
+        console.log(err);
+        res.json({
+            error: true,
+            data: null,
+            message: "Failed to retrieve Workouts.",
+        });
+    });
+});
+
 // router.get("/api/workouts", (req, res) => {
 router.get("/api/workouts/range", (req, res) => {
     db.Workout.find({}).then((foundWorkout) => {

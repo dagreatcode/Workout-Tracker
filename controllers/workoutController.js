@@ -42,7 +42,7 @@ router.post("/api/workouts", (req, res) => {
   });
 });
 
-router.put("/api/workouts", (req, res) => {
+router.put("/api/workouts:/id", (req, res) => {
     db.Workout.find({}).then((putWorkout) => {
         res.json(foundWorkout);
     }).catch((err) =>{

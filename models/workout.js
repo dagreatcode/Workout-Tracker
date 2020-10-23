@@ -12,10 +12,13 @@ const WorkoutSchema = new Schema ({
                 type: String,
             },
             name: {
-                type:
+                type: String,
+            },
+            duration: {
+                type: Number,
             }
         }
-    ]
+    ],
         toJSON: {
             virtuals: true
         }

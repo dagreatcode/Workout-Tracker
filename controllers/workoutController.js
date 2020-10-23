@@ -42,21 +42,36 @@ router.post("/api/workouts", (req, res) => {
   });
 });
 
-router.put("/api/workouts:/id", (req, res) => {
-    db.Workout.find({}).then((putWorkout) => {
-        res.json(foundWorkout);
-    }).catch((err) =>{
+// router.put("/api/workouts:/id", (req, res) => {
+//     db.Workout.find({}).then((putWorkout) => {
+//         res.json(foundWorkout);
+//     }).catch((err) =>{
+//         console.log(err);
+//         res.json({
+//             error: true,
+//             data: null,
+//             message: "Failed to retrieve workout.",
+//         });
+//     });
+// });
+router.put("/api/workouts/:id", (req, res) => {
+    // db.Exercise.create(req.body).then((newExercise) => 
+    db.Workout.findByIdAndUpdate(req.params.id, { $push: { exercises: req.body } }, {new: true})
+    .then((updatedWorkout) => {
+        res.json(updatedWorkout);
+    }).catch(err => {
         console.log(err);
         res.json({
             error: true,
             data: null,
-            message: "Failed to retrieve workout.",
+            message: "Failed to update Workout with id: ${req.params.id}.",
         });
-    });
+    })
 });
 
-router.delete("/api/workouts", (req, res) => {
-  db.Workout.create(req.body).then((deleteWorkout) => {
+//This is here for best practice Full CRUD...
+router.delete("/api/workouts/:id", (req, res) => {
+  db.Workout.findByIdAndDelete(req.params.id, req.body).then((deleteWorkout) => {
       res.json(deleteWorkout);
   }).catch((err) => {
       console.log(err);

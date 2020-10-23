@@ -10,6 +10,8 @@ const WorkoutSchema = new Schema ({
         {
             type: {
                 type: String,
+                required: "Type of Exercise is Required",
+                minLength: 1
             },
             name: {
                 type: String,

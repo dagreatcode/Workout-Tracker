@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/dagreatcode/Workout-Tracker/issues"
   },
-  "homepage": "https://github.com/dagreatcode/Workout-Tracker#readme"
+  "homepage": "https://github.com/dagreatcode/Workout-Tracker#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
 }

@@ -222,4 +222,4 @@ function workoutNames(data) {
   return workouts;
 }
 
-modules.exports = Stats;
+module.exports = Stats;

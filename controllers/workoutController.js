@@ -31,4 +31,4 @@ router.post("/api/workouts", (req, res) => {
   });
 });
 
-modules.exports = router;
+module.exports = router;

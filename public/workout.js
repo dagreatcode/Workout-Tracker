@@ -83,4 +83,4 @@ function renderNoWorkoutText() {
 
 initWorkout();
 
-modules.exports = Workout;
+module.exports = Workout;

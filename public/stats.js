@@ -221,3 +221,5 @@ function workoutNames(data) {
   
   return workouts;
 }
+
+modules.exports = Stats;

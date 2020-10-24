@@ -2,8 +2,8 @@ const express =  require("express");
 const router =  express.Router();
 const path = require("path");
 
-//const db = require("../models");
-const Workout = require("../models/Workout")
+const db = require("../models");
+// const Workout = require("../models/Workout")
 
 router.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
@@ -19,7 +19,7 @@ router.get("/stats", function (req, res) {
 });
 
 router.get("/api/workouts", (req, res) => {
-     Workout.find({}).then((foundWorkouts) => {
+     db.Workout.find({}).then((foundWorkouts) => {
         res.json(foundWorkouts);
     }).catch(err => {
         console.log(err);
@@ -33,7 +33,7 @@ router.get("/api/workouts", (req, res) => {
 
 // router.get("/api/workouts", (req, res) => {
 router.get("/api/workouts/range", (req, res) => {
-     Workout.find({}).then((foundWorkout) => {
+     db.Workout.find({}).then((foundWorkout) => {
         res.json(foundWorkout);
     }).catch((err) =>{
         console.log(err);
@@ -46,7 +46,7 @@ router.get("/api/workouts/range", (req, res) => {
 });
 
 router.post("/api/workouts", (req, res) => {
-   Workout.create(req.body).then((newWorkout) => {
+   db.Workout.create(req.body).then((newWorkout) => {
       res.json(newWorkout);
   }).catch((err) =>{
       console.log(err);
@@ -72,7 +72,7 @@ router.post("/api/workouts", (req, res) => {
 // });
 router.put("/api/workouts/:id", (req, res) => {
     //  Exercise.create(req.body).then((newExercise) => 
-     Workout.findByIdAndUpdate(req.params.id, { $push: { exercises: req.body } }, {new: true})
+     db.Workout.findByIdAndUpdate(req.params.id, { $push: { exercises: req.body } }, {new: true})
     .then((updatedWorkout) => {
         res.json(updatedWorkout);
     }).catch(err => {
@@ -87,7 +87,7 @@ router.put("/api/workouts/:id", (req, res) => {
 
 //This is here for best practice Full CRUD...
 router.delete("/api/workouts/:id", (req, res) => {
-   Workout.findByIdAndDelete(req.params.id, req.body).then((deleteWorkout) => {
+   db.Workout.findByIdAndDelete(req.params.id, req.body).then((deleteWorkout) => {
       res.json(deleteWorkout);
   }).catch((err) => {
       console.log(err);

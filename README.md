@@ -16,3 +16,5 @@ Over all, this was a ok Homework.
 Here is a video showing it works great on local host but not heroku.
 
 https://drive.google.com/file/d/16YfFVEiWBYHLvF9wdZQHcJCm56iyxB3k/view
+
+<img src="./img/iWasHappy.gif" alt="Big Win">

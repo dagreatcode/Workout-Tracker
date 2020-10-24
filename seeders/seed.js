@@ -10,7 +10,7 @@ let db = require("../models");
 // });
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/Workout-Tracker",
+  process.env.MONGODB_URI || "mongodb://localhost/workout-tracker",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

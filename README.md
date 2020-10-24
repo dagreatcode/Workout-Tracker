@@ -20,3 +20,6 @@ https://drive.google.com/file/d/16YfFVEiWBYHLvF9wdZQHcJCm56iyxB3k/view
 # Then this happens. 
 
 <img src="./img/iWasHappy.gif" alt="Big Win">
+
+Heroku work fine.. I had to fix my username in my data base....
+So now it is 100% deployed. DONE!!!!

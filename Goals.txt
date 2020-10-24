@@ -56,6 +56,6 @@ You are required to submit the following:
 
 * The URL to the GitHub repository
 
-SUGD8xpNRHehYUKl
+majoritySUGD8xpNRHehYUKl
 Workout-Tracker
-mongodb+srv://Workout-Tracker:SUGD8xpNRHehYUKl@cluster0.0hiqu.mongodb.net/Workout-Tracker?retryWrites=true&w=majority
+mongodb+srv://Workout-Tracker:SUGD8xpNRHehYUKl@cluster0.0hiqu.mongodb.net/Workout-Tracker?retryWrites=true&w=
